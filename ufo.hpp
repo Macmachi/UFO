@@ -54,5 +54,20 @@ class TILK_UFO: UFOPropBase_F {
 	model = "\UFO\objects\UFO.p3d";
 	icon = "iconObject_1x2";
     editorSubcategory = "EdSubcat_ufo_objects";
+	
+	class UserActions
+	{
+		class animation_ufo 
+		{
+		displayName = "Touch the UFO";
+		position = "mem02";
+		radius = 2;
+		onlyForPlayer = 0;
+		condition = "(alive this)"
+		statement = "this execVM ""\UFO\ufo_animation.sqf"";"
+		}
 
+	};
+	
+	
 };

@@ -1,10 +1,7 @@
 class CfgPatches {
     class UFO {
         units[] = {"TILK_UFO"
-
-
-
-        }; //
+        }; 
         weapons[] = {}; 
         requiredVersion = 1; 
         requiredAddons[] = {}; 
@@ -13,8 +10,7 @@ class CfgPatches {
 
 class cfgVehicles
 {
-#include"\UFO\UFO.hpp"
-
+	#include"\UFO\UFO.hpp"
 };
 
 class CfgEditorCategories
