@@ -60,6 +60,7 @@ class TILK_UFO: UFOPropBase_F {
 		class animation_ufo 
 		{
 		displayName = "Touch the UFO";
+		priority = 0;
 		position = "mem02";
 		radius = 5;
 		onlyForPlayer = 0;
