@@ -61,7 +61,7 @@ class TILK_UFO: UFOPropBase_F {
 		{
 		displayName = "Touch the UFO";
 		position = "mem02";
-		radius = 2;
+		radius = 5;
 		onlyForPlayer = 0;
 		condition = "(alive this)"
 		statement = "this execVM ""\UFO\ufo_animation.sqf"";"
