@@ -1,8 +1,6 @@
 A faire :
 
-- A et après w remove doubles 
-- ctrl P recalculer normal
-- Simplifier surface avec (selection + F) 
-- refaire UV map + texture
-- ajouter un rvmap !
-- Refaire le LOD de geomytry!?
+- Refaire un fichier p3D avec new geometry + les 2 lods + rvmat et texture!
+- Refaire et tester le script en RV (check celui missile) avec dedans un tutoriel + sur le readme+steam !
+
+- REFAIRE MODELISATION de L'UFO???
