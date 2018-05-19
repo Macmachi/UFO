@@ -45,7 +45,7 @@ class UFOPropBase_F : Land_CampingChair_V2_F {
 	};
 };
 
-class TILK_UFO : UFOPropBase_F {
+class TILK_UFO: UFOPropBase_F {
 
 	editorPreview = "\UFO\icons\UFO_icon.paa";
 	scope = 2;
