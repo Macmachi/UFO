@@ -63,7 +63,7 @@ class TILK_UFO: UFOPropBase_F {
 		priority = 0;
 		position = "mem02";
 		radius = 5;
-		onlyForPlayer = 0;
+		onlyForPlayer = 1;
 		condition = "(alive this)"
 		statement = "this execVM ""\UFO\ufo_animation.sqf"";"
 		};
