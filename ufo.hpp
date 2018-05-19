@@ -65,7 +65,7 @@ class TILK_UFO: UFOPropBase_F {
 		onlyForPlayer = 0;
 		condition = "(alive this)"
 		statement = "this execVM ""\UFO\ufo_animation.sqf"";"
-		}
+		};
 
 	};
 	
