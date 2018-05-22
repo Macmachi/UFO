@@ -66,7 +66,7 @@
     deleteVehicle _lightBooster1;
 	//simulates emissive color (during the night)
 	_lightBooster2 = "#lightpoint" createVehicleLocal _emiterpos; 
-	_lightBooster2 setLightBrightness 3; 
+	_lightBooster2 setLightBrightness 2; 
 	_lightBooster2 setLightAmbient [1, 1, 1];
 	_lightBooster2 setLightColor [1, 1, 1]; 
 	_lightBooster2 attachTo [_this, [0, 0, 0], "reactor"];	
@@ -93,7 +93,7 @@
 	
 	sleep 0.2; //break
 
-	_this setVelocity [0,50,30];
+	_this setVelocity [0,10,10];
 	_vel = velocity _this;
 
 		[_this, _vel] spawn {
@@ -110,7 +110,7 @@
 			
 		};
 		
-	sleep 7; //break
+	sleep 12; //break
 
 	deleteVehicle _this; // delete object
 

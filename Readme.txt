@@ -12,3 +12,7 @@ Release v1.1 :
   close enough to the object
 - Animation with sounds and lights (when it is the night)
 --------------------------------------------
+A faire :
+
+- Remodéliser car face manquante dessous... 
+- Animation de fuite moins rapide!
