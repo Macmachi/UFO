@@ -17,3 +17,6 @@ Release v1.2 :
 - Modification of textures
 - Correction in animation
 --------------------------------------------
+Release v1.2.1 :
+- The animation has now been fixed to work in multiplayer
+--------------------------------------------

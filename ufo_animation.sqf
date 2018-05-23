@@ -74,15 +74,15 @@
 
 	_this setVelocity [0,0,10];
 		[_this] spawn {
-			params ["_this"];
+			params ["_ufo"];
 			
 			//exponential increase of the velocity of the ufo during 50 iterations
 			_startVelocity = 1;
 			for "_i" from 1 to 50 do 
 				{
-					_this setVelocity [(vectorUp _this select 0)*_i,(vectorUp _this select 1) *_i,(vectorUp _this select 2)*_i];
+					_ufo setVelocity [(vectorUp _ufo select 0)*_i,(vectorUp _ufo select 1) *_i,(vectorUp _ufo select 2)*_i];
 					sleep 0.1; //break
-					//hint format ["Loop %1 vel %2",str _i, str velocity _this]; //debug
+					//hint format ["Loop %1 vel %2",str _i, str velocity _ufo]; //debug
 				};		
 			
 		};
@@ -97,21 +97,21 @@
 	_vel = velocity _this;
 
 		[_this, _vel] spawn {
-			params ["_this", "_vel"];
+			params ["_ufo", "_vel"];
 			
 			//exponential increase of the velocity of the ufo during 50 iterations
 			_startVelocity = 1;
 			for "_i" from 50 to 75 do 
 				{
-					_this setVelocity [(_vel select 0)*_i,(_vel select 1) *_i,(_vel select 2)*_i];
+					_ufo setVelocity [(_vel select 0)*_i,(_vel select 1) *_i,(_vel select 2)*_i];
 					sleep 0.1; //break
-					//hint format ["Loop %1 vel %2",str _i, str velocity _this]; //debug
+					//hint format ["Loop %1 vel %2",str _i, str velocity _ufo]; //debug
 				};			
 			
 		};
 		
 	sleep 12; //break
-
+    deleteVehicle _lightBooster2;
 	deleteVehicle _this; // delete object
 
 };
