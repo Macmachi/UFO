@@ -111,7 +111,7 @@
 		};
 		
 	sleep 12; //break
-    deleteVehicle _lightBooster2;
+	deleteVehicle _lightBooster2;
 	deleteVehicle _this; // delete object
 
 };
