@@ -22,7 +22,7 @@
 	playSound3D ["UFO\media\sounds\son_ufo.ogg", _this, false, getPosASL _this, 5, 1, 100]; 
 
 	/*
-		Author:AlaskaVet
+		Author of visual effect script : AlaskaVet
 	*/
 
 	//Close inventory
@@ -33,7 +33,7 @@
 	"radialBlur" ppEffectEnable true;
 	enableCamShake true;
 		
-	//Let's go for 5secs of effetcs
+	//Let's go for 6 secs of effetcs
 	for "_i" from 0 to 6 do
 	{
 		"chromAberration" ppEffectAdjust [random 0.25,random 0.25,true];
@@ -61,7 +61,7 @@
 	*/
 
 	sleep 1; //break
-    deleteVehicle _lightBooster1;
+	deleteVehicle _lightBooster1;
 	//simulates emissive color (during the night)
 	_lightBooster2 = "#lightpoint" createVehicleLocal _emiterpos; 
 	_lightBooster2 setLightBrightness 2; 
@@ -97,7 +97,7 @@
 		[_this, _vel] spawn {
 			params ["_ufo", "_vel"];
 			
-			//exponential increase of the velocity of the ufo during 50 iterations
+			//exponential increase of the velocity of the ufo during 25 iterations
 			_startVelocity = 1;
 			for "_i" from 50 to 75 do 
 				{
