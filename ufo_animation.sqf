@@ -6,8 +6,6 @@
 
 0 = _this spawn {
 
-
-
      // delete action on the object (after use)
     _this removeAction 0; 
 
