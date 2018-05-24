@@ -8,7 +8,7 @@
 
 0 = _this spawn {
 
-	_ufo = _this;
+	_ufo = _this select 0;
 	
 	waitUntil {_ufo getVariable ["TILK_UFOlaunch",false];};
 	
