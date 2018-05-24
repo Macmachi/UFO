@@ -65,7 +65,7 @@ class TILK_UFO: UFOPropBase_F {
 		radius = 5;
 		onlyForPlayer = 1;
 		condition = "(alive this)"
-		statement = "_this call TILKUFO_fnc_launchUFO;";
+		statement = "this call TILKUFO_fnc_launchUFO;";
 	};
 
 	};
