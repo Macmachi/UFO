@@ -90,8 +90,7 @@
 	_ufo setVelocity [0,10,10];
 	_vel = velocity _ufo;
 
-		[_ufo, _vel,_lightBooster2] spawn 
-		{
+		[_ufo, _vel,_lightBooster2] spawn {
 			params ["_ufo", "_vel", "_lightBooster2"];
 			
 			//exponential increase of the velocity of the ufo during 25 iterations
