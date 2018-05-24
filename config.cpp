@@ -8,6 +8,11 @@ class CfgPatches {
     };
 };
 
+class cfgFunctions
+{
+	#include "\UFO\functions\functions.hpp"
+};
+
 class cfgVehicles
 {
 	#include"\UFO\UFO.hpp"
