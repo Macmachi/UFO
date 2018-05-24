@@ -10,6 +10,8 @@
 
 	_ufo = _this;
 	
+	waitUntil {_ufo getVariable ["TILK_UFOlaunch",false];};
+	
      //delete action on the object (after use)
     _ufo removeAction 0; 
 

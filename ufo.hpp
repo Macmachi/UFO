@@ -40,7 +40,7 @@ class UFOPropBase_F : Land_CampingChair_V2_F {
 	windSockExist = 0;
 	countsForScoreboard = 0;
 	class EventHandlers {
-		//init = "_this call TK_UFO_fnc_ignition;";
+		init = "_this call TILKUFO_fnc_ignition;";
 		class CBA_Extended_EventHandlers {};
 	};
 };
@@ -65,7 +65,7 @@ class TILK_UFO: UFOPropBase_F {
 		radius = 5;
 		onlyForPlayer = 1;
 		condition = "(alive this)"
-		statement = "this execVM ""\UFO\animation\ufo_animation.sqf"";"
+		statement = "_this call TILKUFO_fnc_launchUFO;";
 	};
 
 	};
