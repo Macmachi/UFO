@@ -1,39 +1,41 @@
 /*
 * Author : TILK 
 * Reminder : If you use my script, please keep this header that credits me
+* Thanks to Mr.H for his help!
 * Source of sounds : universal-soundbank.com
+* Source of visual effect script : AlaskaVet
 */
 
 0 = _this spawn {
 
-     // delete action on the object (after use)
-    _this removeAction 0; 
+	_ufo = _this select 0;
+
+     //delete action on the object (after use)
+    _ufo removeAction 0; 
 
 	//add the position of the object's mem (reactor) in a variable
-	_emiterpos = _this modelToWorld (_this selectionPosition "reactor"); 
+	_emiterpos = _ufo modelToWorld (_ufo selectionPosition "reactor"); 
 
 	//simulates emissive color (during the night)
 	_lightBooster1 = "#lightpoint" createVehicleLocal _emiterpos; 
 	_lightBooster1 setLightBrightness 0.2; 
 	_lightBooster1 setLightAmbient [0.5, 0, 0];
 	_lightBooster1 setLightColor [0.5, 0, 0]; 
-	_lightBooster1 attachTo [_this, [0, 0, 0], "reactor"];
+	_lightBooster1 attachTo [_ufo, [0, 0, 0], "reactor"];
 
-	playSound3D ["UFO\media\sounds\son_ufo.ogg", _this, false, getPosASL _this, 5, 1, 100]; 
+	playSound3D ["UFO\media\sounds\son_ufo.ogg", _ufo, false, getPosASL _ufo, 5, 1, 100]; 
 
-	/*
-		Author of visual effect script : AlaskaVet
-	*/
+	/*start visual effect script*/
 
-	//Close inventory
+	//close inventory
 	closeDialog 0;
 
-	//Activate ppEffects we need
+	//activate ppEffects we need
 	"chromAberration" ppEffectEnable true;
 	"radialBlur" ppEffectEnable true;
 	enableCamShake true;
 		
-	//Let's go for 6 secs of effetcs
+	//let's go for 6 secs of effetcs
 	for "_i" from 0 to 6 do
 	{
 		"chromAberration" ppEffectAdjust [random 0.25,random 0.25,true];
@@ -44,34 +46,32 @@
 		sleep 1;
 	};
 
-	//Stop effects
+	//stop effects
 	"chromAberration" ppEffectAdjust [0,0,true];
 	"chromAberration" ppEffectCommit 5;
 	"radialBlur" ppEffectAdjust  [0,0,0,0];
 	"radialBlur" ppEffectCommit 5;
 	sleep 5;
 
-	//Deactivate ppEffects
+	//deactivate ppEffects
 	"chromAberration" ppEffectEnable false;
 	"radialBlur" ppEffectEnable false;
 	resetCamShake;
 
-	/*
-		END of visual effect script
-	*/
+	/*end of visual effect script*/
 
 	sleep 1; //break
-	deleteVehicle _lightBooster1;
+	deleteVehicle _lightBooster1; // delete first red light
 	//simulates emissive color (during the night)
 	_lightBooster2 = "#lightpoint" createVehicleLocal _emiterpos; 
 	_lightBooster2 setLightBrightness 2; 
 	_lightBooster2 setLightAmbient [1, 1, 1];
 	_lightBooster2 setLightColor [1, 1, 1]; 
-	_lightBooster2 attachTo [_this, [0, 0, 0], "reactor"];	
-	playSound3D ["UFO\media\sounds\son_ufo_decolle.ogg", _this, false, getPosASL _this, 5, 1, 300]; 
+	_lightBooster2 attachTo [_ufo, [0, 0, 0], "reactor"];	
+	playSound3D ["UFO\media\sounds\son_ufo_decolle.ogg", _ufo, false, getPosASL _ufo, 5, 1, 300]; 
 
-	_this setVelocity [0,0,10];
-		[_this] spawn {
+	_ufo setVelocity [0,0,10];
+		[_ufo] spawn {
 			params ["_ufo"];
 			
 			//exponential increase of the velocity of the ufo during 50 iterations
@@ -87,14 +87,14 @@
 
 	sleep 9; //break
 	
-	playSound3D ["UFO\media\sounds\son_ufo_fuite.ogg", _this, false, getPosASL _this, 5, 1, 800]; 
+	playSound3D ["UFO\media\sounds\son_ufo_fuite.ogg", _ufo, false, getPosASL _ufo, 5, 1, 800]; 
 	
 	sleep 0.2; //break
 
-	_this setVelocity [0,10,10];
-	_vel = velocity _this;
+	_ufo setVelocity [0,10,10];
+	_vel = velocity _ufo;
 
-		[_this, _vel] spawn {
+		[_ufo, _vel] spawn {
 			params ["_ufo", "_vel"];
 			
 			//exponential increase of the velocity of the ufo during 25 iterations
@@ -109,7 +109,7 @@
 		};
 		
 	sleep 12; //break
-	deleteVehicle _lightBooster2;
-	deleteVehicle _this; // delete object
+	deleteVehicle _lightBooster2; // delete second white light
+	deleteVehicle _ufo; // delete object
 
 };

@@ -1,6 +1,12 @@
-Creator of the UFO mod : TILK
+Creator of the UFO mod for Arma 3 : TILK
+Reminder : If you use something from my mod you have to credit me !
+--------------------------------------------
+Credits 
+--------------------------------------------
 Thanks to Mr.H for his help!
-
+Source of sounds : universal-soundbank.com
+Source of visual effect script : AlaskaVet
+--------------------------------------------
 --------------------------------------------
 Release v1.0 : Initial release
 --------------------------------------------
