@@ -1,9 +1,9 @@
-class TILKUFO // Defines the "owner"
+class UFO // Defines the "owner"
 {
 	
 		class TILKOVNI// category
 	{
-		tag = "TILKUFO";
+		tag = "UFO";
 		file = "\UFO\functions";
 		class ignition
 		{};
