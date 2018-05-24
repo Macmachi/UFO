@@ -8,8 +8,8 @@
 
 0 = _this spawn {
 
-	_ufo = _this select 0;
-
+	_ufo = _this;
+	
      //delete action on the object (after use)
     _ufo removeAction 0; 
 
@@ -29,12 +29,10 @@
 
 	//close inventory
 	closeDialog 0;
-
 	//activate ppEffects we need
 	"chromAberration" ppEffectEnable true;
 	"radialBlur" ppEffectEnable true;
-	enableCamShake true;
-		
+	enableCamShake true;	
 	//let's go for 6 secs of effetcs
 	for "_i" from 0 to 6 do
 	{
@@ -45,14 +43,12 @@
 		addcamShake[random 3, 1, random 3];
 		sleep 1;
 	};
-
 	//stop effects
 	"chromAberration" ppEffectAdjust [0,0,true];
 	"chromAberration" ppEffectCommit 5;
 	"radialBlur" ppEffectAdjust  [0,0,0,0];
 	"radialBlur" ppEffectCommit 5;
 	sleep 5;
-
 	//deactivate ppEffects
 	"chromAberration" ppEffectEnable false;
 	"radialBlur" ppEffectEnable false;
@@ -94,8 +90,9 @@
 	_ufo setVelocity [0,10,10];
 	_vel = velocity _ufo;
 
-		[_ufo, _vel] spawn {
-			params ["_ufo", "_vel"];
+		[_ufo, _vel,_lightBooster2] spawn 
+		{
+			params ["_ufo", "_vel", "_lightBooster2"];
 			
 			//exponential increase of the velocity of the ufo during 25 iterations
 			_startVelocity = 1;
@@ -106,10 +103,10 @@
 					//hint format ["Loop %1 vel %2",str _i, str velocity _ufo]; //debug
 				};			
 			
+			sleep 8; //break
+			deleteVehicle _lightBooster2; // delete second white light
+			deleteVehicle _ufo; // delete object
+			
 		};
-		
-	sleep 12; //break
-	deleteVehicle _lightBooster2; // delete second white light
-	deleteVehicle _ufo; // delete object
 
 };
